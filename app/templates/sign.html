@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Sign the Guest Book {% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='css/sign.css')  }}"> {% endblock %}
+
+{% block body %} 
+<div class="container mt-5 ml-lg mr-lg w-25 jumbotron">
+    <form class="form-signin" method="POST">
+        <h1 class="h2 mb-3 font-weight-bold text-center">Sign the Guest Book</h1>
+        <input type="text" id="inputName" name="name" class="form-control" placeholder="Name" required autofocus>
+        <textarea class="form-control" id="exampleTextarea" name="comment" rows="8" spellcheck="false"
+            placeholder="Comment..."></textarea>
+        <button class="btn btn-lg btn-primary btn-block rounded" type="submit">Sign in</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Guest Book {% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4"><strong>Guest Book</strong></h1>
+        <hr>
+        <button type="button" class="btn btn-link"><a href="{{ url_for('main.sign') }}">Sign the Guest Book</a></button>
+    </div>
+
+    {% for comment in comments%}
+    <div>
+        <h1 class="pl-2"><strong>{{ comment.name }}</strong></h1>
+    </div>
+    <div class="card card-body bg-light">
+        <p>{{ comment.comment_text }}</p>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
